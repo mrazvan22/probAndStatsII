@@ -1,11 +1,12 @@
-function ex5B1()
+function ex5B2()
 
-proprnd = @(x) mvnrnd(x, eye(2));
-startX = [0, 0];
-jointLikXY(startX)
-[smpl, acc] = mhsample(startX,10^5,'pdf',@jointLikXY,'proprnd',proprnd,'symmetric',true);
+% proprnd = @(x) mvnrnd(x, eye(2));
+% startX = [0, 0];
+% jointLikXY(startX)
+% [smpl, acc] = mhsample(startX,10^5,'pdf',@jointLikXY,'proprnd',proprnd,'symmetric',true);
 
-X = smpl(:,1);
+a = pi/2;
+U = unifrnd(A,B,M,N,...);
 Y = smpl(:,2);
 
 muX = mean(X);
