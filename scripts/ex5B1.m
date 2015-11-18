@@ -1,10 +1,11 @@
-function ex4B2()
-
+function ex5B1()
 
 proprnd = @(x) mvnrnd(x, 0.1*eye(2));
-a = 0;
-likWithA = @(x) jointLik(x,a)
-smpl = mhsample([0.8, 0.8],10^5,'pdf',@jointLik,'proprnd',proprnd,'symmetric',true);
+a = 1;
+likWithA = @(x) jointLik(x,a);
+startX = [0, 0.1];
+jointLik(startX,a)
+[smpl, acc] = mhsample(startX,10^5,'pdf',likWithA,'proprnd',proprnd,'symmetric',true);
 
 X = smpl(:,1);
 Y = smpl(:,2);
@@ -30,5 +31,4 @@ function l = jointLik(x, a)
   end
     
 end
-
 
